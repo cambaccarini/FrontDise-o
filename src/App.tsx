@@ -6,20 +6,9 @@ import OtraPagina from "./OtraPagina";
 function App() {
   return (
       <div>
-        <nav>
-          <ul>
-            <li>
-            <Link to="/tabla-requerimientos">Tabla de Requerimientos</Link>
-            </li>
-            <li>
-            <Link to="/otra-pagina">Otra Página</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-        <Route path="/tabla-requerimientos" element={<TablaRequerimientos />} />
-        <Route path="/otra-pagina" element={<OtraPagina />} />
+      <Routes>
+         <Route path="/" element={<OtraPagina />} />
+         <Route path="/tabla-requerimientos" element={<TablaRequerimientos />} />
       </Routes>
       </div>
   );
