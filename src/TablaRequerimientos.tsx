@@ -34,7 +34,7 @@ return (
 <div className="modal-content">
   
  <span className="close" onClick={onClose}>&times;</span>
-  
+ <img src="https://images.unsplash.com/photo-1732613942657-61684c51eb55?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image description" />
  {children}
   
  </div>
@@ -156,7 +156,7 @@ export default function TablaRequerimientos() {
   })
 
  
-    // Estado para controlar la visibilidad del pop-up
+  // Estado para controlar la visibilidad del pop-up
 
   const [showPopup, setShowPopup] = React.useState(false);
   
