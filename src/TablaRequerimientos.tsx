@@ -34,7 +34,7 @@ return (
 <div className="modal-content">
   
  <span className="close" onClick={onClose}>&times;</span>
- <img src="https://images.unsplash.com/photo-1732613942657-61684c51eb55?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image description" />
+ <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/work-in-progress-design-template-6cc0b86afbb81d0528f26113e3ec02cf_screen.jpg?ts=1698307882" alt="Image description" />
  {children}
   
  </div>
@@ -172,6 +172,7 @@ export default function TablaRequerimientos() {
   
   return (
     <div className="container">
+          <div className="modal-backdrop" style={{ display: showPopup ? 'block' : 'none' }}></div>
       <div className="header">
         <h1 className="title">Team 5</h1>
     <button className="button" onClick={handleClickCreate}>Crear requerimiento</button>
