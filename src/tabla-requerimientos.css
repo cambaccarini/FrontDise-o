@@ -50,8 +50,8 @@
   flex: 1;
   min-width: 200px;
   border: 1px solid #5B6C3C;
-  color: #5B6C3C;
-  background-color: white;
+  color: white;
+  background-color: #79A629;
 }
 
 .clear-filters:hover {
@@ -86,7 +86,7 @@ td {
 }
 
 th {
-  background-color: #5b6c3cbe;
+  background-color: #BAD883;
   font-weight: bold;
   color: black;
   cursor: pointer;
