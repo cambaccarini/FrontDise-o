@@ -14,6 +14,38 @@ interface Requerimiento {
   propietario: string
 }
 
+
+interface ModalProps {
+
+onClose: () => void;
+  
+children: React.ReactNode;
+  
+  }
+  
+// Componente modal simple
+
+const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
+
+return (
+  
+<div className="modal">
+
+<div className="modal-content">
+  
+ <span className="close" onClick={onClose}>&times;</span>
+  
+ {children}
+  
+ </div>
+
+ </div> 
+  );
+  
+  };
+  
+  
+
 export default function TablaRequerimientos() {
   const [datos, setDatos] = React.useState<Requerimiento[]>([
     {
@@ -123,12 +155,36 @@ export default function TablaRequerimientos() {
     )
   })
 
+ 
+    // Estado para controlar la visibilidad del pop-up
+
+  const [showPopup, setShowPopup] = React.useState(false);
+  
+  
+  
+  // Función para manejar el clic en el botón
+  
+  const handleClickCreate = () => {
+  
+ setShowPopup(true);
+  
+  };
+  
   return (
     <div className="container">
       <div className="header">
         <h1 className="title">Team 5</h1>
-        <button className="button">Crear requerimiento</button>
-      </div>
+    <button className="button" onClick={handleClickCreate}>Crear requerimiento</button>
+     {showPopup && (
+
+ <Modal onClose={() => setShowPopup(false)}>
+
+<p>Interfaz en desarrollo</p>
+
+</Modal>
+
+)} 
+</div>
 
       <div className="filters">
         <select 

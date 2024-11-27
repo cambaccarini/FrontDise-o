@@ -74,3 +74,29 @@
     overflow: hidden; /* Deshabilita el desplazamiento */
     background-color: #D9D9D9; /* Color de fondo gris */
   }
+
+  .modal {
+    position: fixed; /* Para que se quede fijo en la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 999; /* Para que se muestre por encima de otros elementos */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
