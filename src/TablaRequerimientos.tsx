@@ -2,6 +2,17 @@
 
 import * as React from "react"
 import './tabla-requerimientos.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TablaRequerimientos/>} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 interface Requerimiento {
   codigo: string
@@ -47,6 +58,8 @@ return (
   
 
 export default function TablaRequerimientos() {
+  const [selectedCodigo, setSelectedCodigo] = React.useState<string | null>(null);
+
   const [datos, setDatos] = React.useState<Requerimiento[]>([
     {
       codigo: "REH-2024-000000001",
@@ -281,7 +294,15 @@ export default function TablaRequerimientos() {
           <tbody>
             {datosFiltrados.map((requerimiento) => (
               <tr key={requerimiento.codigo}>
-                <td>{requerimiento.codigo}</td>
+                <td>
+                  <Link to={`/detalle/${requerimiento.codigo}`} className="no-style-link" aria-label="Ver detalles del requerimiento"onClick={(e) => {
+    e.preventDefault(); // Prevent default navigation
+    setSelectedCodigo(requerimiento.codigo);
+    setShowPopup(true);
+  }}>
+                  <strong>{requerimiento.codigo}</strong>
+                  </Link>
+                </td>
                 <td className={`priority-${requerimiento.prioridad.toLowerCase()}`}>{requerimiento.prioridad}</td>
                 <td>{requerimiento.tipo}</td>
                 <td>{requerimiento.categoria}</td>

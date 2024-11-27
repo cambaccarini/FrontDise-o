@@ -145,3 +145,14 @@
     z-index: 1  998;
     display: none;
   }
+
+  .no-style-link {
+    color: black; /* O el color que desees */
+    text-decoration: none;
+    cursor: default; /* Cambia el cursor a un puntero normal */
+  }
+
+  .no-style-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+  }
